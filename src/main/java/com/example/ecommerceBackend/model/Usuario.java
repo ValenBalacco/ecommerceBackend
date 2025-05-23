@@ -34,7 +34,7 @@ public class Usuario {
     @JsonManagedReference
     private List<UsuarioDireccion> direcciones;
 
-    // Getters y Setters
+ 
     public String getId() {
         return id;
     }

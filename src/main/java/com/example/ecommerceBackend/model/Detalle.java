@@ -23,7 +23,6 @@ public class Detalle {
     @ManyToOne
     private Talle talle;
 
-    // Getters y Setters
     public Long getId() {
         return id;
     }

@@ -26,7 +26,6 @@ public class Producto {
 
     private String sexo;
 
-    // Getters y Setters
     public Long getId() {
         return id;
     }

@@ -14,7 +14,6 @@ public class Talle {
 
     private String talle;
 
-    // Getters y Setters
     public Long getId() {
         return id;
     }

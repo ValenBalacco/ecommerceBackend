@@ -23,7 +23,7 @@ public class UsuarioDireccion {
     @ManyToOne
     private Direccion direccion;
 
-    // Getters y Setters
+  
     public Long getId() {
         return id;
     }

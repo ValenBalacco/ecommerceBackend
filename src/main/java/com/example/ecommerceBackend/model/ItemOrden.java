@@ -1,9 +1,11 @@
 package com.example.ecommerceBackend.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 @Entity
@@ -14,6 +16,8 @@ public class ItemOrden {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "orden_compra_id")
+    @JsonBackReference
     private OrdenCompra ordenCompra;
 
     @ManyToOne
@@ -21,7 +25,6 @@ public class ItemOrden {
 
     private Integer cantidad;
 
-    // Getters y Setters
     public Long getId() {
         return id;
     }

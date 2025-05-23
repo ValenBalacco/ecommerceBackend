@@ -18,7 +18,6 @@ public class Img {
     @ManyToOne
     private Detalle detalle;
 
-    // Getters y Setters
     public Long getId() {
         return id;
     }

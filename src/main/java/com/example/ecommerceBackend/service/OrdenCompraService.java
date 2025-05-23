@@ -1,6 +1,7 @@
 package com.example.ecommerceBackend.service;
 
 import com.example.ecommerceBackend.model.OrdenCompra;
+import com.example.ecommerceBackend.model.ItemOrden;
 import com.example.ecommerceBackend.repository.OrdenCompraRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,8 +23,13 @@ public class OrdenCompraService {
         return ordenCompraRepository.findById(id);
     }
 
-    public OrdenCompra saveOrden(OrdenCompra ordenCompra) {
-        return ordenCompraRepository.save(ordenCompra);
+    public OrdenCompra saveOrden(OrdenCompra orden) {
+        if (orden.getItems() != null) {
+            for (ItemOrden item : orden.getItems()) {
+                item.setOrdenCompra(orden);
+            }
+        }
+        return ordenCompraRepository.save(orden);
     }
 
     public void deleteOrden(Long id) {

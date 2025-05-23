@@ -22,7 +22,6 @@ public class Precio {
     @ManyToOne
     private Descuento descuento;
 
-    // Getters y Setters
     public Long getId() {
         return id;
     }

@@ -18,7 +18,6 @@ public class Descuento {
     private LocalDate fechaInicio;
     private LocalDate fechaFin;
 
-    // Getters y Setters
     public Long getId() {
         return id;
     }
