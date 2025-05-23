@@ -34,4 +34,10 @@ public class DescuentoController {
     public void delete(@PathVariable Long id) {
         descuentoService.deleteDescuento(id);
     }
+
+    @PutMapping("/{id}")
+    public Descuento update(@PathVariable Long id, @RequestBody Descuento descuento) {
+        descuento.setId(id);
+        return descuentoService.saveDescuento(descuento);
+    }
 }

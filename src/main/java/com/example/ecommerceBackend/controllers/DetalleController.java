@@ -34,4 +34,10 @@ public class DetalleController {
     public void delete(@PathVariable Long id) {
         detalleService.deleteDetalle(id);
     }
+
+    @PutMapping("/{id}")
+    public Detalle update(@PathVariable Long id, @RequestBody Detalle detalle) {
+        detalle.setId(id);
+        return detalleService.saveDetalle(detalle);
+    }
 }

@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Direccion {
@@ -12,12 +14,22 @@ public class Direccion {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull @NotBlank
     private String localidad;
+
+    @NotNull @NotBlank
     private String pais;
+
+    @NotNull @NotBlank
     private String provincia;
+
+    @NotNull @NotBlank
     private String departamento;
 
-    // Getters y Setters
+    @NotNull @NotBlank
+    private String codigoPostal;
+
+   
     public Long getId() {
         return id;
     }
@@ -56,5 +68,13 @@ public class Direccion {
 
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
+    }
+
+    public String getCodigoPostal() {
+        return codigoPostal;
+    }
+
+    public void setCodigoPostal(String codigoPostal) {
+        this.codigoPostal = codigoPostal;
     }
 }

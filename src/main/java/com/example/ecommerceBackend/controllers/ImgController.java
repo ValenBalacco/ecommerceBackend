@@ -34,4 +34,10 @@ public class ImgController {
     public void delete(@PathVariable Long id) {
         imgService.deleteImg(id);
     }
+
+    @PutMapping("/{id}")
+    public Img update(@PathVariable Long id, @RequestBody Img img) {
+        img.setId(id);
+        return imgService.saveImg(img);
+    }
 }

@@ -34,4 +34,10 @@ public class ItemOrdenController {
     public void delete(@PathVariable Long id) {
         itemOrdenService.deleteItem(id);
     }
+
+    @PutMapping("/{id}")
+    public ItemOrden update(@PathVariable Long id, @RequestBody ItemOrden item) {
+        item.setId(id);
+        return itemOrdenService.saveItem(item);
+    }
 }

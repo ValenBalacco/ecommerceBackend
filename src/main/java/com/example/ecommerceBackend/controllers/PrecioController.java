@@ -34,4 +34,10 @@ public class PrecioController {
     public void delete(@PathVariable Long id) {
         precioService.deletePrecio(id);
     }
+
+    @PutMapping("/{id}")
+    public Precio update(@PathVariable Long id, @RequestBody Precio precio) {
+        precio.setId(id);
+        return precioService.savePrecio(precio);
+    }
 }

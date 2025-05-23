@@ -34,4 +34,10 @@ public class DireccionController {
     public void delete(@PathVariable Long id) {
         direccionService.deleteDireccion(id);
     }
+
+    @PutMapping("/{id}")
+    public Direccion update(@PathVariable Long id, @RequestBody Direccion direccion) {
+        direccion.setId(id);
+        return direccionService.saveDireccion(direccion);
+    }
 }

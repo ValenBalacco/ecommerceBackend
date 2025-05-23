@@ -23,4 +23,10 @@ public class CategoriaController {
     public Categoria save(@RequestBody Categoria categoria) {
         return categoriaService.saveCategoria(categoria);
     }
+
+    @PutMapping("/{id}")
+    public Categoria update(@PathVariable Long id, @RequestBody Categoria categoria) {
+        categoria.setId(id);
+        return categoriaService.saveCategoria(categoria);
+    }
 }

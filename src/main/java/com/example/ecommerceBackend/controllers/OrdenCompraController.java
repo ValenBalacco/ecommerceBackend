@@ -34,4 +34,10 @@ public class OrdenCompraController {
     public void delete(@PathVariable Long id) {
         ordenService.deleteOrden(id);
     }
+
+    @PutMapping("/{id}")
+    public OrdenCompra update(@PathVariable Long id, @RequestBody OrdenCompra orden) {
+        orden.setId(id);
+        return ordenService.saveOrden(orden);
+    }
 }

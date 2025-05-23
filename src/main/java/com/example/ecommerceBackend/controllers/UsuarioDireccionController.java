@@ -30,6 +30,12 @@ public class UsuarioDireccionController {
         return service.save(usuarioDireccion);
     }
 
+    @PutMapping("/{id}")
+    public UsuarioDireccion update(@PathVariable Long id, @RequestBody UsuarioDireccion usuarioDireccion) {
+        usuarioDireccion.setId(id);
+        return service.save(usuarioDireccion);
+    }
+
     @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id) {
         service.delete(id);

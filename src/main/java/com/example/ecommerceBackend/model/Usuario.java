@@ -1,12 +1,18 @@
 package com.example.ecommerceBackend.model;
+
 import com.example.ecommerceBackend.model.enums.Rol;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.OneToMany;
-import java.util.List;
+import jakarta.persistence.CascadeType;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import java.util.List;
 @Entity
 public class Usuario {
 
@@ -24,7 +30,8 @@ public class Usuario {
     @Enumerated(EnumType.STRING)
     private Rol rol;
 
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<UsuarioDireccion> direcciones;
 
     // Getters y Setters

@@ -34,4 +34,10 @@ public class TalleController {
     public void delete(@PathVariable Long id) {
         talleService.deleteTalle(id);
     }
+
+    @PutMapping("/{id}")
+    public Talle update(@PathVariable Long id, @RequestBody Talle talle) {
+        talle.setId(id);
+        return talleService.saveTalle(talle);
+    }
 }
